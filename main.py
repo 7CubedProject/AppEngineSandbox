@@ -18,6 +18,8 @@ from google.appengine.ext import webapp
 from google.appengine.ext.webapp import util
 
 
+# here's a comment to test git
+
 class MainHandler(webapp.RequestHandler):
     def get(self):
         self.response.out.write('Hello world!')
