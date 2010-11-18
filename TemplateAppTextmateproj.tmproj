@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>currentDocument</key>
-	<string>Dropbox/sevenCubedDev/App Engine/sevenCubedTemplate/templates/index.html</string>
+	<string>sevenCubedTemplate/cubed.py</string>
 	<key>documents</key>
 	<array>
 		<dict>
@@ -21,7 +21,7 @@
 	<integer>227</integer>
 	<key>metaData</key>
 	<dict>
-		<key>Dropbox/sevenCubedDev/App Engine/sevenCubedTemplate/constants.py</key>
+		<key>sevenCubedTemplate/constants.py</key>
 		<dict>
 			<key>caret</key>
 			<dict>
@@ -35,70 +35,70 @@
 			<key>firstVisibleLine</key>
 			<integer>0</integer>
 		</dict>
-		<key>Dropbox/sevenCubedDev/App Engine/sevenCubedTemplate/cubed.py</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>4</integer>
-				<key>line</key>
-				<integer>90</integer>
-			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>67</integer>
-		</dict>
-		<key>Dropbox/sevenCubedDev/App Engine/sevenCubedTemplate/models.py</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>3</integer>
-				<key>line</key>
-				<integer>12</integer>
-			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>0</integer>
-		</dict>
-		<key>Dropbox/sevenCubedDev/App Engine/sevenCubedTemplate/static/css/customCSS.css</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>4</integer>
-				<key>line</key>
-				<integer>57</integer>
-			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>0</integer>
-		</dict>
-		<key>Dropbox/sevenCubedDev/App Engine/sevenCubedTemplate/templates/index.html</key>
+		<key>sevenCubedTemplate/cubed.py</key>
 		<dict>
 			<key>caret</key>
 			<dict>
 				<key>column</key>
 				<integer>19</integer>
 				<key>line</key>
+				<integer>69</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>52</integer>
+		</dict>
+		<key>sevenCubedTemplate/models.py</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>34</integer>
+				<key>line</key>
+				<integer>10</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>0</integer>
+		</dict>
+		<key>sevenCubedTemplate/templates/index.html</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>18</integer>
+				<key>line</key>
 				<integer>33</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
-			<integer>19</integer>
+			<integer>0</integer>
 		</dict>
-		<key>Dropbox/sevenCubedDev/App Engine/sevenCubedTemplate/templates/page1.html</key>
+		<key>sevenCubedTemplate/templates/page1.html</key>
 		<dict>
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>0</integer>
+				<integer>47</integer>
 				<key>line</key>
 				<integer>0</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>0</integer>
+		</dict>
+		<key>sevenCubedTemplate/templates/page2.html</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>4</integer>
+				<key>line</key>
+				<integer>12</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
@@ -108,16 +108,16 @@
 	</dict>
 	<key>openDocuments</key>
 	<array>
-		<string>Dropbox/sevenCubedDev/App Engine/sevenCubedTemplate/models.py</string>
-		<string>Dropbox/sevenCubedDev/App Engine/sevenCubedTemplate/cubed.py</string>
-		<string>Dropbox/sevenCubedDev/App Engine/sevenCubedTemplate/constants.py</string>
-		<string>Dropbox/sevenCubedDev/App Engine/sevenCubedTemplate/static/css/customCSS.css</string>
-		<string>Dropbox/sevenCubedDev/App Engine/sevenCubedTemplate/templates/page1.html</string>
-		<string>Dropbox/sevenCubedDev/App Engine/sevenCubedTemplate/templates/index.html</string>
+		<string>sevenCubedTemplate/templates/index.html</string>
+		<string>sevenCubedTemplate/templates/page2.html</string>
+		<string>sevenCubedTemplate/models.py</string>
+		<string>sevenCubedTemplate/templates/page1.html</string>
+		<string>sevenCubedTemplate/constants.py</string>
+		<string>sevenCubedTemplate/cubed.py</string>
 	</array>
 	<key>showFileHierarchyDrawer</key>
 	<true/>
 	<key>windowFrame</key>
-	<string>{{237, 0}, {1033, 778}}</string>
+	<string>{{-62, 801}, {992, 1079}}</string>
 </dict>
 </plist>

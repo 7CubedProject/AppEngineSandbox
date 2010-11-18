@@ -1,19 +1,4 @@
 #!/usr/bin/env python
-#
-# Copyright 2007 Google Inc.
-#
-# Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
-#
-#     http://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
-#
 
 import os
 import logging
@@ -37,6 +22,23 @@ from constants import *
 #- Must sign in decorator
 
 
+# Decorators
+def MustLogIn(inFunction):
+    """Must Log in Decorator - Ensures that user is logged in"""
+    def outFunction(*args,**kwargs):
+        
+        user = users.get_current_user()
+        
+        if user:
+			return inFunction(*args,**kwargs)
+        else :
+            self.redirect(users.create_login_url("/save"))
+            
+
+    return outFunction
+
+
+# Home Page Handler
 class MainHandler(webapp.RequestHandler):
     def get(self):
         
@@ -47,6 +49,7 @@ class MainHandler(webapp.RequestHandler):
         self.response.out.write(RenderFullPage('page1.html', content_template_values))
 
 
+
 # Page Handlers
 class PageHandler1(webapp.RequestHandler):
     def get(self):
@@ -54,18 +57,22 @@ class PageHandler1(webapp.RequestHandler):
 
         }
         
-        path = os.path.join(os.path.dirname(__file__), 'page1.html')
+        path = os.path.join(os.path.dirname(__file__), 'templates/page1.html')
         self.response.out.write(template.render(path, template_values))
 
        
         
 class PageHandler2(webapp.RequestHandler):
+    
+    @MustLogIn
     def get(self):
-        template_values = {
         
+        saved_users = User.all().fetch(100)
+        template_values = {
+            'saved_users': saved_users 
         }
         
-        path = os.path.join(os.path.dirname(__file__), 'page2.html')
+        path = os.path.join(os.path.dirname(__file__), 'templates/page2.html')
         self.response.out.write(template.render(path, template_values))
 
 
@@ -81,6 +88,23 @@ class PostMethod(webapp.RequestHandler):
     def post(self):
         return 0
 
+class SaveUser(webapp.RequestHandler):
+    
+    @MustLogIn
+    def get(self):
+        google_user = users.get_current_user()
+        db_user = User.get_by_google_user(google_user)
+        
+        if db_user:
+            self.redirect('/')
+            
+        else:
+            db_user = User()
+            db_user.google_user = google_user
+            db_user.put()
+            self.redirect('/')
+        
+        
 
 # Helpers
 def RenderFullPage(template_file_name, content_template_values):
@@ -90,14 +114,20 @@ def RenderFullPage(template_file_name, content_template_values):
     content_path = os.path.join('templates/' + template_file_name )
     
     content = template.render(content_path, content_template_values)
+    
+    user = users.get_current_user()
+    if user:
+        login = ("Welcome, %s! (<a href=\"%s\">Sign out</a>)" % (user.nickname(), users.create_logout_url("/")))
+    else:
+        login = ("<a href=\"%s\">Sign in With Google</a>." % users.create_login_url("/save"))
+    
     template_values = {
-        'CONTENT': content
+        'CONTENT': content,
+        'LOGIN': login
     }
     
     return template.render(main_path, template_values)
 
-
-# Decorators
 
 
 
@@ -105,6 +135,7 @@ def RenderFullPage(template_file_name, content_template_values):
 
 appRoute = webapp.WSGIApplication( [('/page1', PageHandler1),
 										('/page2', PageHandler2),
+										('/save', SaveUser),
 										('/', MainHandler)
 										], debug=True)
 										

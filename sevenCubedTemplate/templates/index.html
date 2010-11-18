@@ -1,17 +1,14 @@
 <html>
 
-	<script type="text/javascript"
-        src="http://code.jquery.com/jquery-latest.js">
-	</script>
-	<script type="text/javascript" >
+	<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+	<script type="text/javascript">
 	
-		function loadTemplateIntoContent(contentName)
+		function loadTemplateIntoContent(content)
 		{
-			 $('#content').load('/' + functionName);
+			 $('#content').load(content);
 		};
 		
 	</script>
-   
 	<!-- Custom Javascript -->
 	<script language="javascript" src="js/customJS.js"></script>
 	<head>
@@ -30,10 +27,13 @@
 
     <div class="container">
 	
-		<div id="header" class="span-24 last">
+		<div id="header" class="prepend-top span-24 last">
 	 		<h2>SevenCubed Template App</h2>
-			
 		</div> <!--header -->
+		
+		<div id="login" class="span-6 prepend-18 last">
+			{{LOGIN}}
+		</div>
 		
 		<!-- For Use With Horizontal Navigation-->
 		<div id="navHorizontal" class="span-24 last">
@@ -61,7 +61,7 @@
 		</div> 
 		-->
 		
-		<div id="footer" class="span-24 last">
+		<div id="footer" class="prepend-top span-24 last">
 			
 			<p> This Should be Fun </p>
 			

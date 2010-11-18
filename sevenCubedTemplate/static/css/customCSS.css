@@ -15,29 +15,34 @@
 
 #header
 {
+   text-align:center;
+}
+
+#login
+{
    
 }
 
 #content
 {
-    
+   
   
 }
 
 #footer
 {
-	
+    text-align:center;
 }
 
     
 }
 /* << ----------------// Horizontal navigation //---------------->> */
 #navHorizontal {
-
+   
 }
 
 #navHorizontal ul {
-
+    
     list-style:none ;
 }
 
@@ -45,6 +50,11 @@
 
     display:inline;
 }
+
+#navHorizontal ul li a:hover {
+  color:#424242;
+}
+
 
 #navHorizontal ul li a:link, #navHorizontal ul li a:visited {
 
